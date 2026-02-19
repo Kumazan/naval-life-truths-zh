@@ -54,7 +54,8 @@ body { font-family: var(--sans); background: var(--bg); color: var(--fg); line-h
 .chapter ul { margin-bottom: 1rem; padding-left: 1.2rem; }
 .chapter li { margin-bottom: 0.5rem; font-weight: 300; }
 .chapter strong { font-weight: 700; }
-.callout { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; margin: 1.2rem 0; font-size: 0.92rem; }
+.callout { background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; margin: 1.2rem 0; font-size: 0.92rem; display: flex; align-items: center; min-height: 84px; }
+.callout p { margin: 0; }
 .sep { text-align: center; padding: 1rem 0; color: var(--faint); font-size: 1.5rem; letter-spacing: 0.5em; }
 .links { display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin-top:1rem; }
 .links a { text-decoration:none; font-family:var(--mono); font-size:.78rem; padding:.42rem .7rem; border:1px solid var(--faint); border-radius:99px; color:var(--muted); }
