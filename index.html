@@ -7,140 +7,250 @@
   <meta name="description" content="Naval Ravikant 對談精華：繁中重點總結＋文章化翻譯整理。" />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg2: #111831;
-      --card: rgba(255,255,255,.08);
-      --text: #e9eefc;
-      --muted: #b8c1de;
-      --primary: #8ab4ff;
-      --accent: #7ef0c6;
-      --border: rgba(255,255,255,.15);
+      --bg: #f7f2e8;
+      --paper: #fffdf8;
+      --ink: #22201d;
+      --muted: #6a655f;
+      --line: #d8d0c2;
+      --accent: #9d5b2a;
+      --accent-soft: #f1e5d7;
       --max: 920px;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 500px at 10% -10%, #2f4c8d66, transparent 60%),
-        radial-gradient(900px 500px at 90% -20%, #1e8c7666, transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      line-height: 1.85;
+      font-family: "Noto Serif TC", "PMingLiU", serif;
+      background: radial-gradient(1200px 300px at 50% -150px, #efe4d2, transparent), var(--bg);
+      color: var(--ink);
+      line-height: 1.95;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 80px; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 20px 84px; }
+
     .hero {
-      border: 1px solid var(--border);
-      background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
-      border-radius: 22px;
-      padding: 28px;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px 28px;
+      box-shadow: 0 14px 40px rgba(70, 43, 20, .06);
     }
-    h1 { margin: 0 0 10px; line-height: 1.25; font-size: clamp(1.6rem, 4.5vw, 2.4rem); }
-    .subtitle { color: var(--muted); margin: 0; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: .84rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 4.8vw, 2.45rem);
+      line-height: 1.35;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+    .sub {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .meta {
+      margin-top: 14px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+
+    .dots {
+      text-align: center;
+      letter-spacing: .32em;
+      color: #b4a691;
+      margin: 20px 0 0;
+      user-select: none;
+    }
+
+    .section {
+      margin-top: 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 26px;
+      box-shadow: 0 14px 34px rgba(70, 43, 20, .04);
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: .01em;
+    }
+    .lead { color: var(--muted); margin: 8px 0 0; }
+
+    .list {
+      margin: 14px 0 0;
+      padding-left: 22px;
+    }
+    .list li { margin: 8px 0; }
+
+    .chapter {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px dashed #d7cdbf;
+    }
+    .chapter:first-of-type { border-top: 0; padding-top: 0; margin-top: 14px; }
+
+    .chapter-no {
+      font-size: .82rem;
+      color: var(--accent);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+      line-height: 1.45;
+    }
+    p { margin: 8px 0; font-size: 1.03rem; }
+
+    .toolbar {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     .btn {
-      display: inline-block; color: #081024; background: var(--primary); text-decoration: none;
-      padding: 9px 14px; border-radius: 999px; font-weight: 700; font-size: .92rem;
+      display: inline-block;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-size: .9rem;
+      background: #fff;
     }
-    .btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); font-weight: 600; }
-    section {
-      margin-top: 24px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
+    .btn:hover { border-color: #b6a58c; }
+
+    .foot {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .9rem;
     }
-    h2 { margin: 0 0 10px; font-size: 1.25rem; color: #dfe8ff; }
-    h3 { margin: 22px 0 8px; font-size: 1.05rem; color: #c7d6ff; }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin: 6px 0; color: #e7ecff; }
-    p { margin: 10px 0; color: #edf2ff; }
-    .muted { color: var(--muted); }
-    .foot { margin-top: 20px; font-size: .9rem; color: var(--muted); }
-    .tag {
-      display: inline-block; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px;
-      color: var(--accent); font-size: .82rem; margin-bottom: 10px;
+
+    @media (max-width: 640px) {
+      .hero, .section { padding: 20px 18px; border-radius: 14px; }
+      p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header class="hero">
-      <div class="tag">Naval × Chris Williamson｜繁中精讀版</div>
-      <h1>44 條人生硬道理：
-        從幸福、成功、自由到權力的長談</h1>
-      <p class="subtitle">把 3 小時對談整理成：可讀的中文文章風格版本。</p>
-      <div class="links">
-        <a class="btn" href="https://youtu.be/KyfUysrNaco" target="_blank" rel="noopener">看原影片</a>
-        <a class="btn secondary" href="./transcript.en.txt">英文逐字稿</a>
-        <a class="btn secondary" href="./transcript.zh-tw.txt">繁中逐字稿</a>
+      <div class="eyebrow">SDD-style editorial page</div>
+      <h1>44 條人生硬道理：從幸福、成功、自由到權力的長談</h1>
+      <p class="sub">Naval Ravikant × Chris Williamson 對談精讀（繁中重寫版）</p>
+      <p class="meta">原影片：<a href="https://youtu.be/KyfUysrNaco" target="_blank" rel="noopener">https://youtu.be/KyfUysrNaco</a></p>
+      <div class="toolbar">
+        <a class="btn" href="./transcript.en.txt">英文逐字稿</a>
+        <a class="btn" href="./transcript.zh-tw.txt">繁中逐字稿</a>
+        <a class="btn" href="https://github.com/Kumazan/naval-life-truths-zh" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
+      <div class="dots">· · ·</div>
     </header>
 
-    <section>
+    <section class="section">
       <h2>重點總結（繁中）</h2>
-      <ul>
-        <li><strong>幸福不是獎品，而是能力：</strong>把幸福延後到某個成就之後，通常只會讓你永遠追著下一個目標跑。</li>
-        <li><strong>成功與滿足天然衝突：</strong>驅動成功的是不滿足；但長期不滿足，也會吞噬平靜與快樂。</li>
-        <li><strong>欲望要做斷捨離：</strong>很多「想要」不是你的，是社會比較、演算法與廣告灌進來的。</li>
-        <li><strong>核心技能才是自由底盤：</strong>收入與選擇權，來自可持續放大的可交易能力（specific knowledge）。</li>
-        <li><strong>注意力比時間更珍貴：</strong>時間流逝是必然；注意力花在哪，才決定你活成誰。</li>
-        <li><strong>對新聞上癮，常常是慢性失控：</strong>若你不能行動改變，只會交換成焦慮與疲憊。</li>
-        <li><strong>面對過去：理解，但不要住在裡面：</strong>可以處理創傷，但最終得回到當下、回到行動。</li>
-        <li><strong>育兒核心是無條件愛與能動性：</strong>父母能給的是支持與邊界，不是把孩子雕成指定樣子。</li>
-        <li><strong>社會永遠在擺盪：</strong>個體與集體、自由與管制，沒有永久終局，只有動態平衡。</li>
-        <li><strong>健康議題要重證據、重脈絡：</strong>不要把任何單一敘事當宗教；持續更新模型比立場更重要。</li>
+      <ul class="list">
+        <li><strong>幸福不是獎品，而是能力：</strong>把幸福延後到某個成就後，通常只會一直追下一個目標。</li>
+        <li><strong>成功與滿足天然衝突：</strong>成功常靠不滿足驅動，但長期不滿足會侵蝕平靜。</li>
+        <li><strong>欲望要定期斷捨離：</strong>很多「想要」其實是比較心、社會期待與演算法植入。</li>
+        <li><strong>核心技能才是自由底盤：</strong>可複利、可交易的能力，才會換來收入與選擇權。</li>
+        <li><strong>注意力才是人生貨幣：</strong>不是錢，也不只是時間；你長期關注什麼，就會成為什麼。</li>
+        <li><strong>新聞焦慮多半是失控感：</strong>如果不能轉為行動，持續關注通常只會耗損。</li>
+        <li><strong>過去可以理解，但別住在裡面：</strong>反思是為了卸載，不是為了把痛苦做成身份。</li>
+        <li><strong>育兒核心是愛與能動性：</strong>父母能做的是穩定輸出，不是精準控制孩子結果。</li>
+        <li><strong>社會永遠在擺盪：</strong>個人與集體、自由與管制，沒有永久終局，只有動態平衡。</li>
+        <li><strong>健康議題重證據重脈絡：</strong>不要神化單一敘事，持續更新模型比固守立場重要。</li>
       </ul>
     </section>
 
-    <section>
+    <section class="section">
       <h2>完整翻譯（文章化段落）</h2>
-      <p class="muted">以下為「通順中文重寫」版本：保留原意、刪除口語贅詞，讓閱讀體驗更像長文專訪。</p>
+      <p class="lead">以下為通順中文重寫，保留原意、去除大量口語贅詞，閱讀感接近長文專訪。</p>
 
-      <h3>1) 幸福，究竟是結果還是選擇？</h3>
-      <p>訪談一開始，最直球的問題是：如果幸福代表「對現況滿足」，而成功又常常來自「不滿足現況」，這兩件事是否互相打架？Naval 的回答是，幸福不該被理解成某個終點站，而更像是一種可以在當下切換的內在狀態。你可以把快樂綁在外在里程碑上，也可以練習在尚未達標時，依然保有穩定的心境。</p>
-      <p>他借用古典哲學的意象：一種人生是持續征服外在世界，另一種人生是降低不必要的欲望。兩條路都可能通往自由，但第二條路通常更快，因為你不再把內在秩序交給外在條件決定。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 01</div>
+        <h3>幸福，究竟是結果還是選擇？</h3>
+        <p>訪談一開始，最直球的問題是：如果幸福代表「對現況滿足」，而成功又常常來自「不滿足現況」，這兩件事是否互相打架？Naval 的回答是，幸福不該被理解成某個終點站，而更像是一種可以在當下切換的內在狀態。你可以把快樂綁在外在里程碑上，也可以練習在尚未達標時，依然保有穩定的心境。</p>
+        <p>他借用古典哲學的意象：一種人生是持續征服外在世界，另一種人生是降低不必要的欲望。兩條路都可能通往自由，但第二條路通常更快，因為你不再把內在秩序交給外在條件決定。</p>
+      </article>
 
-      <h3>2) 成功的燃料，是不滿足；但代價是焦慮</h3>
-      <p>現代人常把人生寫成條件句：等我賺到某個數字、升到某個職位、被某群人肯定，我就會幸福。問題在於，當你真的抵達那個點，新的焦慮通常已經在路上。這不是你不夠努力，而是把幸福設定為「延後兌現」本身，就會讓你永遠活在預支未來的模式。</p>
-      <p>Naval 的提醒不是反成功，而是反「無意識地被欲望拖行」。追求成就可以，但你必須知道自己在換什麼：是更大自由，還是更深依賴？</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 02</div>
+        <h3>成功的燃料，是不滿足；但代價是焦慮</h3>
+        <p>現代人常把人生寫成條件句：等我賺到某個數字、升到某個職位、被某群人肯定，我就會幸福。問題在於，當你真的抵達那個點，新的焦慮通常已經在路上。這不是你不夠努力，而是把幸福設定為「延後兌現」本身，就會讓你永遠活在預支未來的模式。</p>
+        <p>Naval 的提醒不是反成功，而是反「無意識地被欲望拖行」。追求成就可以，但你必須知道自己在交換什麼：是更大自由，還是更深依賴？</p>
+      </article>
 
-      <h3>3) 想要很多，不代表活得更大</h3>
-      <p>對談中的核心線索之一，是「欲望管理」。他主張要定期盤點欲望清單：哪些是真需求，哪些只是比較心、廣告語言、或社會劇本製造的幻覺。當你刪掉那些可有可無的想要，內在空間會立刻變大，決策品質也會一起上升。</p>
-      <p>他把欲望形容成一份契約：你一旦簽下它，就等於同意在未達成前保持不快樂。所以，別把「想要」視為無害念頭；它本質上是會吞噬注意力的負債。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 03</div>
+        <h3>想要很多，不代表活得更大</h3>
+        <p>對談中的核心線索之一，是「欲望管理」。他主張要定期盤點欲望清單：哪些是真需求，哪些只是比較心、廣告語言、或社會劇本製造的幻覺。當你刪掉那些可有可無的想要，內在空間會立刻變大，決策品質也會一起上升。</p>
+        <p>他把欲望形容成一份契約：你一旦簽下它，就等於同意在未達成前保持不快樂。所以，別把「想要」視為無害念頭；它本質上是會吞噬注意力的負債。</p>
+      </article>
 
-      <h3>4) 真正能兌現自由的，是可複利的核心能力</h3>
-      <p>Naval 一直強調，把時間押在核心技能上，而不是押在短期刺激上。當你的能力能被市場穩定辨識，你就能用更少的心理摩擦，換到更高的收入與更厚的選擇權。這裡的重點不是「什麼都做」，而是找到你獨特的槓桿點，長期疊加。</p>
-      <p>很多人追逐的是看起來體面的生活樣板，但忽略了真正支撐自由的結構：可持續輸出的價值、可遷移的能力、與能抗波動的心智。前者是表面，後者才是底盤。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 04</div>
+        <h3>真正能兌現自由的，是可複利的核心能力</h3>
+        <p>Naval 一直強調，把時間押在核心技能上，而不是押在短期刺激上。當你的能力能被市場穩定辨識，你就能用更少的心理摩擦，換到更高的收入與更厚的選擇權。這裡的重點不是「什麼都做」，而是找到你獨特的槓桿點，長期疊加。</p>
+        <p>很多人追逐的是看起來體面的生活樣板，但忽略了真正支撐自由的結構：可持續輸出的價值、可遷移的能力、與能抗波動的心智。前者是表面，後者才是底盤。</p>
+      </article>
 
-      <h3>5) 你的生命貨幣，不是時間，是注意力</h3>
-      <p>這場對談最值得反覆咀嚼的一句話是：人生真正的貨幣是注意力。時間人人都會流失，但注意力是你少數能主動分配的資產。你把它長期投在哪裡，哪裡就會長成你的命運。</p>
-      <p>因此，他對「新聞過量攝取」保持高度警惕。當你持續把注意力投到自己無法影響的事件上，往往只會換來慢性壓力。若你真的在意某議題，就轉成可執行行動；否則就承認它超出控制圈，別讓它掏空你的日常。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 05</div>
+        <h3>你的生命貨幣，不是時間，是注意力</h3>
+        <p>這場對談最值得反覆咀嚼的一句話是：人生真正的貨幣是注意力。時間人人都會流失，但注意力是你少數能主動分配的資產。你把它長期投在哪裡，哪裡就會長成你的命運。</p>
+        <p>因此，他對「新聞過量攝取」保持高度警惕。當你持續把注意力投到自己無法影響的事件上，往往只會換來慢性壓力。若你真的在意某議題，就轉成可執行行動；否則就承認它超出控制圈，別讓它掏空你的日常。</p>
+      </article>
 
-      <h3>6) 關於過去：你可以理解它，但不要成為它</h3>
-      <p>談到童年與傷痕時，Naval 的態度很務實：反思是為了卸載，不是為了把痛苦打造為身份品牌。你可以花一段時間釐清自己，但若永遠停在「解釋我為何如此」，就很難前進到「我現在要怎麼活」。</p>
-      <p>他用「切開戈耳狄俄斯之結」來比喻：有些歷史不是靠無限分析能解開，而是靠某個時刻的決斷——不再把生命主導權交給過去。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 06</div>
+        <h3>關於過去：你可以理解它，但不要成為它</h3>
+        <p>談到童年與傷痕時，Naval 的態度很務實：反思是為了卸載，不是為了把痛苦打造為身份品牌。你可以花一段時間釐清自己，但若永遠停在「解釋我為何如此」，就很難前進到「我現在要怎麼活」。</p>
+        <p>他用「切開戈耳狄俄斯之結」來比喻：有些歷史不是靠無限分析能解開，而是靠某個時刻的決斷——不再把生命主導權交給過去。</p>
+      </article>
 
-      <h3>7) 育兒不是控制工程，而是關係工程</h3>
-      <p>在親子議題上，他主張父母最重要的輸出，是無條件的愛與穩定支持。你可以提供價值觀、方法、邊界，但不能把孩子當成可精準編排的專案。真正要守住的是孩子的能動性：讓他在被愛的基礎上，學會選擇、犯錯、修正、負責。</p>
-      <p>換句話說，父母能決定的是自己的行為品質，而非孩子最終的人格配方。把這件事想清楚，很多焦慮會下降，很多關係會變好。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 07</div>
+        <h3>育兒不是控制工程，而是關係工程</h3>
+        <p>在親子議題上，他主張父母最重要的輸出，是無條件的愛與穩定支持。你可以提供價值觀、方法、邊界，但不能把孩子當成可精準編排的專案。真正要守住的是孩子的能動性：讓他在被愛的基礎上，學會選擇、犯錯、修正、負責。</p>
+        <p>換句話說，父母能決定的是自己的行為品質，而非孩子最終的人格配方。把這件事想清楚，很多焦慮會下降，很多關係會變好。</p>
+      </article>
 
-      <h3>8) 個人與集體的拔河，從來沒有結束</h3>
-      <p>對社會與政治的觀察中，他認為歷史長期都在兩極擺盪：一端是個體自由與市場槓桿，另一端是集體秩序與平均分配。兩種力量都必要，也都可能走到極端。真正困難的，不是選邊站，而是持續校正平衡點。</p>
-      <p>在科技槓桿時代，個人影響力可能被放大到前所未見，這同時創造機會，也放大不平等與相對剝奪感。社會如何承接這種張力，會是未來十年的關鍵命題。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 08</div>
+        <h3>個人與集體的拔河，從來沒有結束</h3>
+        <p>對社會與政治的觀察中，他認為歷史長期都在兩極擺盪：一端是個體自由與市場槓桿，另一端是集體秩序與平均分配。兩種力量都必要，也都可能走到極端。真正困難的，不是選邊站，而是持續校正平衡點。</p>
+        <p>在科技槓桿時代，個人影響力可能被放大到前所未見，這同時創造機會，也放大不平等與相對剝奪感。社會如何承接這種張力，會是未來十年的關鍵命題。</p>
+      </article>
 
-      <h3>9) 對健康與醫療，保持開放但不迷信</h3>
-      <p>對談後段花很多篇幅談醫療、肥胖、代謝與新藥。他的立場一貫：不要把任何單一立場神聖化。科學不是口號，而是持續迭代的證據系統。今天的共識可能是明天的過渡版本，真正成熟的態度是對新證據保持更新能力。</p>
-      <p>重點不是「反主流」或「挺主流」，而是回到基本功：看資料品質、看研究脈絡、看風險收益比，最後做出對自己與家人長期最有利的選擇。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 09</div>
+        <h3>對健康與醫療，保持開放但不迷信</h3>
+        <p>對談後段花很多篇幅談醫療、肥胖、代謝與新藥。他的立場一貫：不要把任何單一立場神聖化。科學不是口號，而是持續迭代的證據系統。今天的共識可能是明天的過渡版本，真正成熟的態度是對新證據保持更新能力。</p>
+        <p>重點不是「反主流」或「挺主流」，而是回到基本功：看資料品質、看研究脈絡、看風險收益比，最後做出對自己與家人長期最有利的選擇。</p>
+      </article>
 
-      <h3>10) 最後的落點：自由不是贏過誰，而是活回自己</h3>
-      <p>整場訪談表面在談財富、文化、制度、科技，底層其實都指向同一題：你是否正在主動設計自己的注意力、欲望與生活節奏。當一個人可以減少被外界牽引，並且穩定地把時間投向真正重要的人與事，他就已經在自由之中。</p>
-      <p>從這個角度看，「贏」不是把人生做成比較優勢，而是逐步把不必要的痛苦移除，把重要的事做深，直到你不再需要向世界證明什麼，仍然知道自己在往哪裡走。</p>
+      <article class="chapter">
+        <div class="chapter-no">Chapter 10</div>
+        <h3>最後的落點：自由不是贏過誰，而是活回自己</h3>
+        <p>整場訪談表面在談財富、文化、制度、科技，底層其實都指向同一題：你是否正在主動設計自己的注意力、欲望與生活節奏。當一個人可以減少被外界牽引，並且穩定地把時間投向真正重要的人與事，他就已經在自由之中。</p>
+        <p>從這個角度看，「贏」不是把人生做成比較優勢，而是逐步把不必要的痛苦移除，把重要的事做深，直到你不再需要向世界證明什麼，仍然知道自己在往哪裡走。</p>
+      </article>
+
+      <p class="foot">註：本文為影片內容的繁中整理與文章化重寫，不代表逐字逐句直譯；若需核對語境，建議搭配原影片與逐字稿閱讀。</p>
     </section>
-
-    <p class="foot">註：本文為影片內容的繁中整理與文章化重寫，不代表逐字逐句直譯；完整字幕請參考上方逐字稿檔案。</p>
   </main>
 </body>
 </html>
